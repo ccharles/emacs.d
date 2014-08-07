@@ -181,7 +181,7 @@
 ;;; Edit server
 (use-package edit-server
   :ensure edit-server
-  :config (add-hook 'after-init-hook '(edit-server-start)))
+  :config (edit-server-start))
 
 ;;; Emacs lisp
 (add-hook 'emacs-lisp-mode-hook (eldoc-mode))
