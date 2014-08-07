@@ -276,6 +276,14 @@
   :ensure projectile
   :config (projectile-global-mode))
 
+;;; Python
+(use-package jedi
+  :ensure jedi
+  :config (add-hook 'python-mode-hook 'jedi:setup))
+
+(use-package pyvenv
+  :ensure pyvenv)
+
 ;;; Rainbow delimiters
 (use-package rainbow-delimiters
   :ensure rainbow-delimiters
