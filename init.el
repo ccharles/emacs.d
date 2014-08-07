@@ -223,6 +223,11 @@
   (eval-after-load 'tern
     '(add-to-list 'company-backends 'company-tern)))
 
+;;; Lua
+(use-package lua-mode
+  :ensure lua-mode
+  :config (add-to-list 'auto-mode-alist '("\\.lua\\'" . lua-mode)))
+
 ;;; Magit
 (use-package magit
   :ensure magit
