@@ -107,7 +107,8 @@
 ;; Show empty lines in the fringe
 (setq-default indicate-empty-lines t)
 
-(set-face-attribute 'default nil :font "Source Code Pro-12")
+(if (window-system)
+  (set-face-attribute 'default nil :font "Source Code Pro-12"))
 
 (global-prettify-symbols-mode)
 
