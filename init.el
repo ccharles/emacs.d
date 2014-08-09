@@ -198,7 +198,10 @@
 
 ;;; Ido
 (use-package ido
-  :config (ido-mode +1))
+  :config
+  (progn
+    (ido-mode +1)
+    (ido-everywhere +1)))
 
 (use-package ido-ubiquitous
   :ensure ido-ubiquitous
