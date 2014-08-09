@@ -307,11 +307,11 @@
 ;;     (sp-use-smartparens-bindings)
 ;;     (eval-after-load "web-mode" '(add-to-list 'sp-ignore-modes-list 'web-mode))))
 
-;;; Web mode (apparently not available via MELPA stable)
-;; (use-package web-mode
-;;   :ensure web-mode
-;;   :init (add-to-list 'auto-mode-alist
-;;                      '("\\.html.django\\'" . web-mode)))
+;;; Web mode
+(use-package web-mode
+  :ensure web-mode
+  :init (add-to-list 'auto-mode-alist
+                     '("\\.html.django\\'" . web-mode)))
 
 ;;; Whitespace butler
 (use-package ws-butler
