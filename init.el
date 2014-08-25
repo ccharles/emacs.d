@@ -290,6 +290,22 @@
     (plist-put org-format-latex-options :foreground 'default)
     (plist-put org-format-latex-options :background 'default)))
 
+;;; Paredit
+;;;
+;;; Unfortunately, smart-parens is not yet available via
+;;; MELPA-stable. paredit will have to do!
+(use-package paredit
+  :ensure paredit
+  :config
+  (progn
+    (add-hook 'emacs-lisp-mode-hook #'enable-paredit-mode)
+    (eval-after-load "cider"
+      '(add-hook 'clojure-mode-hook #'enable-paredit-mode))
+    (eval-after-load "eldoc"
+      '(eldoc-add-command
+        'paredit-backward-delete
+        'paredit-close-round))))
+
 ;;; Popwin
 (use-package popwin
   :ensure popwin
