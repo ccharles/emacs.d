@@ -236,6 +236,22 @@
   :ensure magit
   :bind ("C-c g" . magit-status))
 
+;; From http://whattheemacsd.com/setup-magit.el-01.html
+(defadvice magit-status (around magit-fullscreen activate)
+  "Make magit use the full frame."
+  (window-configuration-to-register :magit-fullscreen)
+  ad-do-it
+  (delete-other-windows))
+
+(defun magit-quit-session ()
+  "Restore the previous window configuration and kill the magit buffer."
+  (interactive)
+  (kill-buffer)
+  (jump-to-register :magit-fullscreen))
+
+(eval-after-load "magit"
+  '(define-key magit-status-mode-map (kbd "q") 'magit-quit-session))
+
 ;;; Markdown
 (use-package markdown-mode
   :ensure markdown-mode
