@@ -186,7 +186,7 @@
   :config (edit-server-start))
 
 ;;; Emacs lisp
-(add-hook 'emacs-lisp-mode-hook (eldoc-mode))
+(add-hook 'emacs-lisp-mode-hook #'turn-on-eldoc-mode)
 
 ;;; Expand-region
 (use-package expand-region
