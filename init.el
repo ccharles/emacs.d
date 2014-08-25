@@ -168,7 +168,9 @@
 (use-package company
   :ensure company
   :config
-  (add-hook 'after-init-hook 'global-company-mode))
+  (progn
+    (add-hook 'after-init-hook 'global-company-mode)
+    (bind-key (kbd "M-<tab>") 'company-complete company-mode-map)))
 
 ;;; Drag stuff
 (use-package drag-stuff
