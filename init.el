@@ -228,6 +228,10 @@
   (eval-after-load 'tern
     '(add-to-list 'company-backends 'company-tern)))
 
+;;; Less
+(use-package less-css-mode
+  :ensure less-css-mode)
+
 ;;; Lua
 (use-package lua-mode
   :ensure lua-mode
