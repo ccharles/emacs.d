@@ -310,6 +310,10 @@
         'paredit-backward-delete
         'paredit-close-round))))
 
+;;; PHP
+(use-package php-mode
+  :ensure php-mode)
+
 ;;; Popwin
 (use-package popwin
   :ensure popwin
