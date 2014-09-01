@@ -107,9 +107,6 @@
 ;; Show empty lines in the fringe
 (setq-default indicate-empty-lines t)
 
-(if (window-system)
-  (set-face-attribute 'default nil :font "Source Code Pro-12"))
-
 (when (fboundp 'prettify-symbols-mode)
   (global-prettify-symbols-mode))
 
@@ -198,6 +195,15 @@
 (use-package flycheck
   :ensure flycheck
   :config (global-flycheck-mode 1))
+
+;;; Fonts
+(use-package dynamic-fonts
+  :ensure dynamic-fonts
+  :config
+  (progn
+    (setq dynamic-fonts-preferred-monospace-fonts
+          '("Source Code Pro" "Ubuntu Mono" "Consolas" "Courier New" "Monospace"))
+    (dynamic-fonts-setup)))
 
 ;;; Ido
 (use-package ido
