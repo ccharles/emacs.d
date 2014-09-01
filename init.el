@@ -110,7 +110,8 @@
 (if (window-system)
   (set-face-attribute 'default nil :font "Source Code Pro-12"))
 
-(global-prettify-symbols-mode)
+(when (fboundp 'prettify-symbols-mode)
+  (global-prettify-symbols-mode))
 
 (provide 'init)
 
