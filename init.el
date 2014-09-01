@@ -319,6 +319,12 @@
 (use-package php-mode
   :ensure php-mode)
 
+;;; PKGBUILD
+(use-package pkgbuild-mode
+  :ensure pkgbuild-mode
+  :config
+  (add-to-list 'auto-mode-alist '("PKGBUILD\\'" . pkgbuild-mode)))
+
 ;;; Popwin
 (use-package popwin
   :ensure popwin
