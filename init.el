@@ -184,6 +184,10 @@
   :config (edit-server-start))
 
 ;;; Emacs lisp
+(use-package highlight-quoted
+  :ensure highlight-quoted
+  :config (add-hook 'emacs-lisp-mode-hook (lambda () (highlight-quoted-mode))))
+
 (add-hook 'emacs-lisp-mode-hook #'turn-on-eldoc-mode)
 
 ;;; Expand-region
