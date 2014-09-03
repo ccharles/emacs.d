@@ -367,6 +367,14 @@
     (add-hook 'emacs-lisp-mode-hook 'rainbow-delimiters-mode)
     (add-hook 'clojure-mode-hook 'rainbow-delimiters-mode)))
 
+;;; Rainbow mode
+(use-package rainbow-mode
+  :ensure rainbow-mode
+  :init
+  (progn
+    (add-hook 'css-mode-hook (lambda () (rainbow-mode t)))
+    (add-hook 'less-mode-hook (lambda () (rainbow-mode t)))))
+
 ;;; Smart parens (apparently not available via MELPA-stable)
 ;; (use-package smartparens
 ;;   :ensure smartparens
