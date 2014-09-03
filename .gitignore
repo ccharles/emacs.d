@@ -31,3 +31,9 @@ tramp
 # AUCTeX auto folder
 /auto/
 
+# Caches
+ido.last
+.mc-lists.el
+.places
+projectile-bookmarks.eld
+
