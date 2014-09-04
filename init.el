@@ -120,10 +120,10 @@
 (add-to-list 'package-archives
              '("melpa-stable" . "http://melpa-stable.milkbox.net/packages/") t)
 
-(if (not (package-installed-p 'use-package))
-    (progn
-      (package-refresh-contents)
-      (package-install 'use-package)))
+(package-refresh-contents)
+
+(when (not (package-installed-p 'use-package))
+  (package-install 'use-package))
 
 (require 'use-package)
 
