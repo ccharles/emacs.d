@@ -192,6 +192,10 @@
   :ensure highlight-quoted
   :config (add-hook 'emacs-lisp-mode-hook (lambda () (highlight-quoted-mode))))
 
+(use-package elisp-slime-nav
+  :ensure elisp-slime-nav
+  :config (add-hook 'emacs-lisp-mode-hook 'elisp-slime-nav-mode))
+
 (add-hook 'emacs-lisp-mode-hook #'turn-on-eldoc-mode)
 
 ;;; Expand-region
