@@ -261,6 +261,11 @@
   :ensure magit
   :bind ("C-c g" . magit-status))
 
+(use-package magit-gitflow
+  :ensure magit-gitflow
+  :config (eval-after-load "magit"
+            '(add-hook 'magit-mode-hook 'turn-on-magit-gitflow)))
+
 ;; From http://whattheemacsd.com/setup-magit.el-01.html
 (defadvice magit-status (around magit-fullscreen activate)
   "Make magit use the full frame."
