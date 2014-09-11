@@ -43,14 +43,6 @@
 (if (require 'uniquify nil t)
     (setq uniquify-buffer-name-style 'forward))
 
-;; From http://www.reddit.com/r/emacs/comments/d2t4q/scratch_buffers_for_emacs/c0x7a68
-;;
-;; Automatically select the appropriate major mode for buffers
-;; (setq-default major-mode
-;;  (lambda ()
-;;    (let ((buffer-file-name (or buffer-file-name (buffer-name))))
-;;      (set-auto-mode))))
-
 (setq enable-remote-dir-locals t)
 (recentf-mode 1)
 
