@@ -190,7 +190,7 @@
 ;;; Emacs lisp
 (use-package highlight-quoted
   :ensure highlight-quoted
-  :config (add-hook 'emacs-lisp-mode-hook (lambda () (highlight-quoted-mode))))
+  :config (add-hook 'emacs-lisp-mode-hook #'highlight-quoted-mode))
 
 (use-package elisp-slime-nav
   :ensure elisp-slime-nav
@@ -237,7 +237,7 @@
   :ensure tern
   :config
   (progn
-    (add-hook 'js-mode-hook (lambda () (tern-mode t)))
+    (add-hook 'js-mode-hook #'tern-mode)
     (add-to-list 'auto-mode-alist '("\\.tern-project\\'" . js-mode))
     (add-to-list 'auto-mode-alist '("\\.tern-config\\'" . js-mode))))
 
@@ -283,6 +283,10 @@
   '(define-key magit-status-mode-map (kbd "q") 'magit-quit-session))
 
 ;;; Markdown
+(defun my-disable-electric-indent ()
+  "Disable electric indenting."
+  (electric-indent-local-mode -1))
+
 (use-package markdown-mode
   :ensure markdown-mode
   :config
@@ -291,7 +295,7 @@
     (add-to-list 'auto-mode-alist '("\\.md\\'" . markdown-mode)))
   :init
   (add-hook 'markdown-mode-hook
-            (lambda () (electric-indent-local-mode -1))))
+            #'my-disable-electric-indent))
 
 ;;; Multiple cursors
 (use-package multiple-cursors
@@ -381,8 +385,8 @@
   :ensure rainbow-mode
   :init
   (progn
-    (add-hook 'css-mode-hook (lambda () (rainbow-mode t)))
-    (add-hook 'less-mode-hook (lambda () (rainbow-mode t)))))
+    (add-hook 'css-mode-hook #'rainbow-mode)
+    (add-hook 'less-mode-hook #'rainbow-mode)))
 
 ;;; Smart parens (apparently not available via MELPA-stable)
 ;; (use-package smartparens
