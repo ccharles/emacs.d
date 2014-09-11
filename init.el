@@ -299,6 +299,14 @@
   (global-set-key (kbd "C-S-c C-S-c") 'mc/edit-lines)
   (global-set-key (kbd "C-S-<mouse-1>") 'mc/add-cursor-on-click))
 
+;;; Olivetti
+(use-package olivetti
+  :ensure olivetti
+  :config
+  (progn
+    (setf olivetti-body-width 80)
+    (visual-line-mode)))
+
 ;;; Org
 (use-package org
   :bind ("C-c a" . org-agenda)
