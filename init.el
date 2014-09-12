@@ -414,14 +414,14 @@
   :ensure wrap-region
   :init (wrap-region-global-mode))
 
-;;; Yasnippet (missing dropdown-list)
-;; (use-package yasnippet
-;;   :ensure yasnippet
-;;   :config
-;;   (progn
-;;     (setq-default yas-prompt-functions
-;;           '(yas-x-prompt yas-completing-prompt yas-ido-prompt yas-no-prompt))
-;;     (yas-global-mode 1)))
+;;; Yasnippet
+(use-package yasnippet
+  :ensure yasnippet
+  :config
+  (progn
+    (setq-default yas-prompt-functions
+          '(yas-x-prompt yas-completing-prompt yas-ido-prompt yas-no-prompt))
+    (yas-global-mode)))
 
 (provide 'init)
 
