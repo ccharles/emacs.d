@@ -102,6 +102,8 @@
 (when (fboundp 'prettify-symbols-mode)
   (global-prettify-symbols-mode))
 
+(auto-insert-mode)
+
 
 ;;; Packages
 (require 'package)
@@ -343,6 +345,12 @@
 ;;; PHP
 (use-package php-mode
   :ensure php-mode)
+
+(eval-after-load 'autoinsert
+  '(define-auto-insert
+     '("\\.php\\'" . "PHP skeleton")
+     '("Short description: "
+       "<?php\n\n")))
 
 ;;; PKGBUILD
 (use-package pkgbuild-mode
