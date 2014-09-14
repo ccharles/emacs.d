@@ -1,0 +1,11 @@
+# -*- mode: snippet -*-
+# name: class
+# key: cls
+# --
+${6:/**
+ * ${7:docblock}
+ */}
+class ${1:`(file-name-base (buffer-file-name))`}${2: extends ${3:Parent}}${4: implements ${5:Interface}}
+{
+    $0
+}
