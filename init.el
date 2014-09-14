@@ -420,7 +420,7 @@
   :config
   (progn
     (setq-default yas-prompt-functions
-          '(yas-x-prompt yas-completing-prompt yas-ido-prompt yas-no-prompt))
+          '(yas-ido-prompt yas-x-prompt yas-completing-prompt yas-no-prompt))
     (yas-global-mode)))
 
 (provide 'init)
