@@ -420,7 +420,8 @@
   :config
   (progn
     (setq-default yas-prompt-functions
-          '(yas-ido-prompt yas-x-prompt yas-completing-prompt yas-no-prompt))
+                  '(yas-ido-prompt yas-x-prompt yas-completing-prompt yas-no-prompt))
+    (setf yas-wrap-around-region t)
     (yas-global-mode)))
 
 (provide 'init)
