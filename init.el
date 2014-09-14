@@ -102,8 +102,6 @@
 (when (fboundp 'prettify-symbols-mode)
   (global-prettify-symbols-mode))
 
-(provide 'init)
-
 
 ;;; Packages
 (require 'package)
