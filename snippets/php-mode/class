@@ -5,7 +5,10 @@
 ${6:/**
  * ${7:docblock}
  */}
-class ${1:`(file-name-base (buffer-file-name))`}${2: extends ${3:Parent}}${4: implements ${5:Interface}}
+class ${1:`(let ((file-name (buffer-file-name)))
+             (if file-name
+                 (file-name-base (buffer-file-name))
+               "MyClass"))`}${2: extends ${3:Parent}}${4: implements ${5:Interface}}
 {
     $0
 }
