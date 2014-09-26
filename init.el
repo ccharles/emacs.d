@@ -209,6 +209,16 @@
           '("Source Code Pro" "Ubuntu Mono" "Consolas" "Courier New" "Monospace"))
     (dynamic-fonts-setup)))
 
+;;; Gmail
+(use-package gmail-message-mode
+  :ensure gmail-message-mode)
+
+(use-package ham-mode
+  :ensure ham-mode
+  :init
+  (setf ham-mode-markdown-command
+        '("/usr/bin/pandoc" "--from" "markdown" "--to" "html" "--standalone" file)))
+
 ;;; Ido
 (use-package ido
   :config
