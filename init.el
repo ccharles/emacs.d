@@ -334,7 +334,8 @@
           '(:hours "%d" :require-hours t :minutes ":%02d" :require-minutes t))
     (plist-put org-format-latex-options :scale 1.2)
     (plist-put org-format-latex-options :foreground 'default)
-    (plist-put org-format-latex-options :background 'default)))
+    (plist-put org-format-latex-options :background 'default)
+    (setf org-hide-emphasis-markers t)))
 
 ;;; Paredit
 ;;;
