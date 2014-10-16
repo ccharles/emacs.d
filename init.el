@@ -221,20 +221,10 @@
   (setf ham-mode-markdown-command
         '("/usr/bin/pandoc" "--from" "markdown" "--to" "html" "--standalone" file)))
 
-;;; Ido
-(use-package ido
-  :config
-  (progn
-    (ido-mode +1)
-    (ido-everywhere +1)))
-
-(use-package ido-ubiquitous
-  :ensure ido-ubiquitous
-  :config (ido-ubiquitous-mode +1))
-
-(use-package flx-ido
-  :ensure flx-ido
-  :config (flx-ido-mode +1))
+;;; Helm
+(use-package helm-config
+  :ensure helm
+  :config (helm-mode 1))
 
 ;;; JavaScript
 (use-package tern
@@ -320,6 +310,8 @@
     (visual-line-mode)))
 
 ;;; Org
+(add-to-list 'load-path "/home/chris/code/org-mode/lisp/")
+
 (use-package org
   :bind ("C-c a" . org-agenda)
   :config
@@ -382,6 +374,10 @@
 (use-package projectile
   :ensure projectile
   :config (projectile-global-mode))
+
+(use-package helm-projectile
+  :ensure helm-projectile
+  :bind ("C-c p h" . helm-projectile))
 
 ;;; Python
 (use-package jedi
