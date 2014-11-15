@@ -382,7 +382,10 @@
 ;;; Python
 (use-package jedi
   :ensure jedi
-  :config (add-hook 'python-mode-hook 'jedi:setup))
+  :config
+  (progn
+    (add-hook 'python-mode-hook 'jedi:setup)
+    (setf jedi:install-imenu t)))
 
 (use-package pyvenv
   :ensure pyvenv)
