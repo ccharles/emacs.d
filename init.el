@@ -107,6 +107,9 @@
 (when (boundp 'eval-expression-minibuffer-setup-hook)
   (add-hook 'eval-expression-minibuffer-setup-hook #'eldoc-mode))
 
+(when (boundp 'electric-pair-mode)
+  (electric-pair-mode))
+
 ;;; Packages
 (require 'package)
 (package-initialize)
