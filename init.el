@@ -420,6 +420,10 @@
 ;;     (sp-use-smartparens-bindings)
 ;;     (eval-after-load "web-mode" '(add-to-list 'sp-ignore-modes-list 'web-mode))))
 
+;;; Vagrant
+(use-package vagrant
+  :ensure vagrant)
+
 ;;; Web mode
 (use-package web-mode
   :ensure web-mode
