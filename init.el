@@ -440,6 +440,10 @@
   :ensure wrap-region
   :init (wrap-region-global-mode))
 
+;;; YAML
+(use-package yaml-mode
+  :ensure yaml-mode)
+
 ;;; Yasnippet
 (use-package yasnippet
   :ensure yasnippet
