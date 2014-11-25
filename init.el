@@ -335,6 +335,11 @@
     (plist-put org-format-latex-options :background 'default)
     (setf org-hide-emphasis-markers t)))
 
+;; Page breaks
+(use-package page-break-lines
+  :ensure page-break-lines
+  :init (global-page-break-lines-mode))
+
 ;;; Paredit
 ;;;
 ;;; Unfortunately, smart-parens is not yet available via
