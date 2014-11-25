@@ -37,3 +37,8 @@ ido.last
 .places
 projectile-bookmarks.eld
 
+games/
+url/
+var/
+custom.el
+session.*
