@@ -388,6 +388,10 @@
   :ensure helm-projectile
   :bind ("C-c p h" . helm-projectile))
 
+;;; Puppet
+(use-package puppet-mode
+  :ensure puppet-mode)
+
 ;;; Python
 (use-package jedi
   :ensure jedi
