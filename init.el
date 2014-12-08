@@ -403,6 +403,10 @@
 (use-package pyvenv
   :ensure pyvenv)
 
+;;; R
+(use-package ess
+  :ensure ess)
+
 ;;; Rainbow delimiters
 (use-package rainbow-delimiters
   :ensure rainbow-delimiters
