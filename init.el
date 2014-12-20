@@ -398,7 +398,10 @@
 
 ;;; Puppet
 (use-package puppet-mode
-  :ensure puppet-mode)
+  :ensure puppet-mode
+  :config
+  (add-hook 'puppet-mode-hook
+            (lambda () (push '("=>" . ?⇒) prettify-symbols-alist))))
 
 ;;; Python
 (use-package jedi
