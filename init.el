@@ -234,9 +234,26 @@
         '("/usr/bin/pandoc" "--from" "markdown" "--to" "html" "--standalone" file)))
 
 ;;; Helm
+;;;
+;;; Much of this is inspired by
+;;;     http://tuhdo.github.io/helm-intro.html
 (use-package helm-config
   :ensure helm
-  :config (helm-mode 1))
+  :config
+  (progn
+    (global-set-key (kbd "C-c h") 'helm-command-prefix)
+    (global-set-key (kbd "M-x") 'helm-M-x)
+    (global-set-key (kbd "M-y") 'helm-show-kill-ring)
+    (global-set-key (kbd "C-x b") 'helm-mini)
+    (global-unset-key (kbd "C-x c"))
+
+    (eval-after-load "helm"
+       '(progn
+          (define-key helm-map (kbd "<tab>") 'helm-execute-persistent-action)
+          (define-key helm-map (kbd "C-i") 'helm-execute-persistent-action)
+          (define-key helm-map (kbd "C-z") 'helm-select-action)))
+
+    (helm-mode 1)))
 
 ;;; JavaScript
 (use-package tern
