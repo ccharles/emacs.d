@@ -431,6 +431,10 @@
     (add-hook 'css-mode-hook #'rainbow-mode)
     (add-hook 'less-mode-hook #'rainbow-mode)))
 
+;;; Real GUD
+(use-package realgud
+  :ensure realgud)
+
 ;;; Smart parens (apparently not available via MELPA-stable)
 ;; (use-package smartparens
 ;;   :ensure smartparens
