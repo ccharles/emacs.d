@@ -130,6 +130,14 @@
   :ensure ace-jump-mode
   :init (define-key global-map (kbd "<insert>") 'ace-jump-mode))
 
+;;; C
+(defun my-enable-semantic ()
+  "Turn on semantic."
+  (semantic-mode)
+  (semantic-idle-summary-mode))
+
+(add-hook 'c-mode-hook #'my-enable-semantic)
+
 ;;; Clojure
 (use-package cider
   :ensure cider
