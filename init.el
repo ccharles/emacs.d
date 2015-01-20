@@ -237,6 +237,13 @@
 ;;;
 ;;; Much of this is inspired by
 ;;;     http://tuhdo.github.io/helm-intro.html
+
+;; Temporary workaround for Emacs trunk
+;;   From https://debbugs.gnu.org/cgi/bugreport.cgi?bug=19552
+(unless (functionp 'class-slot-initarg)
+  (defun class-slot-initarg (class-name slot)
+    (eieio--class-slot-initarg (eieio--class-v class-name) slot)))
+
 (use-package helm-config
   :ensure helm
   :config
