@@ -348,6 +348,11 @@
 ;;; Org
 (add-to-list 'load-path "/home/chris/code/org-mode/lisp/")
 
+(eval-after-load 'org
+  '(if (boundp 'org-highlight-latex-and-related) ; Emacs 24.4 and later
+       (setf org-highlight-latex-and-related '(latex))
+     (setf org-highlight-latex-fragments-and-specials t)))
+
 (use-package org
   :bind ("C-c a" . org-agenda)
   :config
