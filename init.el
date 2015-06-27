@@ -538,6 +538,21 @@
     (setf yas-wrap-around-region t)
     (yas-global-mode)))
 
+(use-package emr
+  :ensure t
+  :bind ("M-RET" . emr-show-refactor-menu)
+  :config (add-hook 'prog-mode-hook #'emr-initialize))
+
+(use-package srefactor
+  :ensure t
+  :config
+  (progn
+    (define-key c-mode-map (kbd "M-RET") 'srefactor-refactor-at-point)
+    (define-key c++-mode-map (kbd "M-RET") 'srefactor-refactor-at-point)))
+
+(use-package js2-refactor
+  :ensure t)
+
 (use-package irony
   :ensure t
   :config
