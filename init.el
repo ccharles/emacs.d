@@ -564,6 +564,10 @@
   :ensure t
   :config (add-hook 'irony-mode-hook 'irony-eldoc))
 
+(use-package yafolding
+  :ensure t
+  :config (add-hook 'prog-mode-hook #'yafolding-mode))
+
 (use-package pdf-tools
   :ensure t
   :config (pdf-tools-install))
