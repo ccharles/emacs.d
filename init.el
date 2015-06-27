@@ -120,7 +120,11 @@
 (package-initialize)
 
 (add-to-list 'package-archives
-             '("melpa-stable" . "http://stable.melpa.org/packages/") t)
+             '("melpa" . "http://melpa.org/packages/") t)
+
+(setf package-archive-priorities
+      '(("melpa" . 20)
+        ("gnu" . 0)))
 
 (package-refresh-contents)
 
