@@ -568,6 +568,10 @@
   :ensure t
   :config (pdf-tools-install))
 
+(use-package ensime
+  :ensure t
+  :config (add-hook 'scala-mode-hook #'ensime-scala-mode-hook))
+
 (use-package adoc-mode
   :ensure t
   :config (add-to-list 'auto-mode-alist '("\\.adoc" . adoc-mode)))
