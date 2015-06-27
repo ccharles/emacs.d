@@ -270,7 +270,13 @@
        '(progn
           (define-key helm-map (kbd "<tab>") 'helm-execute-persistent-action)
           (define-key helm-map (kbd "C-i") 'helm-execute-persistent-action)
-          (define-key helm-map (kbd "C-z") 'helm-select-action)))
+          (define-key helm-map (kbd "C-z") 'helm-select-action)
+
+          ;; http://www.reddit.com/r/emacs/comments/2z7nbv/lean_helm_window/
+          (setf helm-display-header-line nil)
+          ;; (set-face-attribute 'helm-source-header nil :height 0)
+          (helm-autoresize-mode 1)
+          (setf helm-split-window-in-side-p t)))
 
     (helm-mode 1)))
 
