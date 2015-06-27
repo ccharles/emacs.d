@@ -293,7 +293,8 @@
 ;;; Magit
 (use-package magit
   :ensure magit
-  :bind ("C-c g" . magit-status))
+  :bind ("C-c g" . magit-status)
+  :init (setf magit-last-seen-setup-instructions "1.4.0"))
 
 (use-package magit-gitflow
   :ensure magit-gitflow
