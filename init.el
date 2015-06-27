@@ -139,12 +139,16 @@
   :init (define-key global-map (kbd "<insert>") 'ace-jump-mode))
 
 ;;; C
-(defun my-enable-semantic ()
+(defun my-c-mode-hook ()
   "Turn on semantic."
   (semantic-mode)
-  (semantic-idle-summary-mode))
+  (semantic-idle-summary-mode)
 
-(add-hook 'c-mode-hook #'my-enable-semantic)
+  (eval-after-load "irony"
+    '(when (member major-mode irony-supported-major-modes)
+       (irony-mode 1))))
+
+(add-hook 'c-mode-hook #'my-c-mode-hook)
 
 ;;; Clojure
 (use-package cider
@@ -521,6 +525,32 @@
                   '(yas-ido-prompt yas-x-prompt yas-completing-prompt yas-no-prompt))
     (setf yas-wrap-around-region t)
     (yas-global-mode)))
+
+(use-package irony
+  :ensure t
+  :config
+  (progn
+    (add-hook 'irony-mode-hook 'irony-cdb-autosetup-compile-options)))
+
+(use-package company-irony
+  :ensure t
+  :config
+  (progn
+    (eval-after-load 'company
+      '(add-to-list 'company-backends 'company-irony))
+    (add-hook 'irony-mode-hook 'company-irony-setup-begin-commands)))
+
+(use-package flycheck-irony
+  :ensure t
+  :config
+  (eval-after-load 'flycheck
+    '(progn
+       (add-to-list 'flycheck-checkers 'irony)
+       (add-to-list 'flycheck-disabled-checkers 'c/c++-clang))))
+
+(use-package irony-eldoc
+  :ensure t
+  :config (add-hook 'irony-mode-hook 'irony-eldoc))
 
 (provide 'init)
 
