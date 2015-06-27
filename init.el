@@ -444,6 +444,7 @@
 
 (use-package helm-projectile
   :ensure helm-projectile
+  :config (setf projectile-switch-project-action 'projectile-vc)
   :bind ("C-c p h" . helm-projectile))
 
 ;;; Puppet
