@@ -389,7 +389,9 @@
     (plist-put org-format-latex-options :scale 1.2)
     (plist-put org-format-latex-options :foreground 'default)
     (plist-put org-format-latex-options :background 'default)
-    (setf org-hide-emphasis-markers t)))
+    (setf org-hide-emphasis-markers t)
+    (setf org-ctrl-k-protect-subtree 'error)
+    (setf org-catch-invisible-edits 'show-and-error)))
 
 ;; Page breaks
 (use-package page-break-lines
