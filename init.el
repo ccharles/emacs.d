@@ -445,6 +445,8 @@
     (add-hook 'python-mode-hook 'jedi:setup)
     (setf jedi:install-imenu t)))
 
+(add-hook 'python-mode #'subword-mode)
+
 (use-package pyvenv
   :ensure pyvenv)
 
