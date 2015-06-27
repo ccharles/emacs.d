@@ -568,6 +568,9 @@
   :ensure t
   :config (pdf-tools-install))
 
+(use-package dockerfile-mode
+  :ensure t)
+
 (use-package sx
   :ensure t)
 
