@@ -440,10 +440,13 @@
 ;;; Projectile
 (use-package projectile
   :ensure projectile
-  :config (projectile-global-mode))
+  :config
+  (progn
+    (projectile-global-mode)))
 
 (use-package helm-projectile
   :ensure helm-projectile
+  :init (helm-projectile-on)
   :config (setf projectile-switch-project-action 'projectile-vc)
   :bind ("C-c p h" . helm-projectile))
 
