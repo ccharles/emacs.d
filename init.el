@@ -90,6 +90,8 @@
 (eval-after-load "ediff"
   '(set-variable 'ediff-window-setup-function 'ediff-setup-windows-plain))
 
+;; ERC is awesome, but I don't need to know when people show up or leave
+(eval-after-load "erc" '(setf erc-hide-list '("JOIN" "PART" "QUIT" "AWAY" "MODE" "NICK")))
 
 ;;; Appearance
 
