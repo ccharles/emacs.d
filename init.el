@@ -568,6 +568,10 @@
   :ensure t
   :config (pdf-tools-install))
 
+(use-package adoc-mode
+  :ensure t
+  :config (add-to-list 'auto-mode-alist '("\\.adoc" . adoc-mode)))
+
 (use-package dockerfile-mode
   :ensure t)
 
