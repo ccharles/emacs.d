@@ -571,6 +571,10 @@
 (use-package sx
   :ensure t)
 
+(use-package highlight-symbol
+  :ensure t
+  :config (add-hook 'prog-mode-hook #'highlight-symbol-mode))
+
 (provide 'init)
 
 ;;; init.el ends here
