@@ -564,6 +564,10 @@
   :ensure t
   :config (add-hook 'irony-mode-hook 'irony-eldoc))
 
+(use-package pdf-tools
+  :ensure t
+  :config (pdf-tools-install))
+
 (provide 'init)
 
 ;;; init.el ends here
