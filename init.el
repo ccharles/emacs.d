@@ -568,6 +568,9 @@
   :ensure t
   :config (pdf-tools-install))
 
+(use-package sx
+  :ensure t)
+
 (provide 'init)
 
 ;;; init.el ends here
