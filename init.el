@@ -575,6 +575,8 @@
   :ensure t
   :config (add-hook 'prog-mode-hook #'highlight-symbol-mode))
 
+(use-package annotate :ensure t)
+
 (provide 'init)
 
 ;;; init.el ends here
