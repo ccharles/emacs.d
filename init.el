@@ -508,7 +508,11 @@
 (use-package web-mode
   :ensure web-mode
   :init (add-to-list 'auto-mode-alist
-                     '("\\.html.django\\'" . web-mode)))
+                     '("\\.html.django\\'" . web-mode))
+  :config
+  (progn
+    (setf web-mode-markup-indent-offset 2)
+    (setf web-mode-code-indent-offset 2)))
 
 ;;; Whitespace butler
 (use-package ws-butler
