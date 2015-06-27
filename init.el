@@ -564,6 +564,13 @@
   :ensure t
   :config (add-hook 'irony-mode-hook 'irony-eldoc))
 
+(use-package tagedit
+  :ensure t
+  :init (eval-after-load "sgml-mode"
+          '(progn
+             (tagedit-add-paredit-like-keybindings)
+             (add-hook 'html-mode-hook (lambda () (tagedit-mode 1))))))
+
 (use-package yafolding
   :ensure t
   :config (add-hook 'prog-mode-hook #'yafolding-mode))
