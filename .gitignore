@@ -42,3 +42,12 @@ url/
 var/
 custom.el
 session.*
+
+.cask/
+.python-environments/
+.sx/
+ensime/
+geben/
+irony/
+semanticdb/
+projectile.cache
