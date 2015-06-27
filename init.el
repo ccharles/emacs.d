@@ -113,6 +113,8 @@
 (when (boundp 'electric-pair-mode)
   (electric-pair-mode))
 
+(add-hook 'after-save-hook 'executable-make-buffer-file-executable-if-script-p)
+
 ;;; Packages
 (require 'package)
 (package-initialize)
