@@ -224,7 +224,7 @@
   :config
   (progn
     (setq dynamic-fonts-preferred-monospace-fonts
-          '("Source Code Pro" "Ubuntu Mono" "Consolas" "Courier New" "Monospace"))
+          '("Roboto Mono" "Source Code Pro" "Ubuntu Mono" "Consolas" "Courier New" "Monospace"))
     (dynamic-fonts-setup)))
 
 ;;; Gmail
