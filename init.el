@@ -133,10 +133,11 @@
 
 (require 'use-package)
 
-;;; Ace-jump
-(use-package ace-jump-mode
-  :ensure ace-jump-mode
-  :init (define-key global-map (kbd "<insert>") 'ace-jump-mode))
+;;; Avy
+(use-package avy
+  :ensure t
+  :config
+  (global-set-key (kbd "<insert>") 'avy-goto-char))
 
 ;;; C
 (defun my-c-mode-hook ()
