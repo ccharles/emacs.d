@@ -225,6 +225,10 @@
   :ensure expand-region
   :bind ("C-=" . er/expand-region))
 
+;;; Floobits
+(use-package floobits
+  :ensure t)
+
 ;;; Flycheck
 (use-package flycheck
   :ensure flycheck
