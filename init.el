@@ -137,7 +137,10 @@
 (use-package avy
   :ensure t
   :config
-  (global-set-key (kbd "<insert>") 'avy-goto-char))
+  (progn
+    (global-set-key (kbd "<insert>") 'avy-goto-char)
+    (global-set-key (kbd "M-g g") 'avy-goto-line)
+    (global-set-key (kbd "M-g M-g") 'avy-goto-line)))
 
 ;;; C
 (defun my-c-mode-hook ()
