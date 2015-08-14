@@ -629,6 +629,8 @@
 
 (use-package annotate :ensure t)
 
+(use-package csv-mode :ensure t)
+
 (provide 'init)
 
 ;;; init.el ends here
