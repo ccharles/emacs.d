@@ -239,8 +239,11 @@
   :ensure dynamic-fonts
   :config
   (progn
-    (setq dynamic-fonts-preferred-monospace-fonts
-          '("Roboto Mono" "Source Code Pro" "Ubuntu Mono" "Consolas" "Courier New" "Monospace"))
+    (setf dynamic-fonts-preferred-monospace-fonts
+          '("Source Code Pro" "Roboto Mono" "Ubuntu Mono"
+            "Consolas" "Courier New" "Monospace"))
+    (setf dynamic-fonts-preferred-monospace-point-size 11)
+    (setf dynamic-fonts-preferred-proportional-point-size 11)
     (dynamic-fonts-setup)))
 
 ;;; Gmail
