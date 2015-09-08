@@ -634,6 +634,13 @@
 
 (use-package rotate :ensure t)
 
+(use-package indent-guide
+  :ensure t
+  :config
+  (progn
+    (indent-guide-global-mode)
+    (set-face-foreground 'indent-guide-face "lightgray")))
+
 (provide 'init)
 
 ;;; init.el ends here
