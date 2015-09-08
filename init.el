@@ -628,10 +628,6 @@
 (use-package sx
   :ensure t)
 
-(use-package highlight-symbol
-  :ensure t
-  :config (add-hook 'prog-mode-hook #'highlight-symbol-mode))
-
 (use-package annotate :ensure t)
 
 (use-package csv-mode :ensure t)
