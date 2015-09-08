@@ -641,6 +641,10 @@
     (indent-guide-global-mode)
     (set-face-foreground 'indent-guide-face "lightgray")))
 
+(use-package git-gutter-fringe
+  :ensure t
+  :config (global-git-gutter-mode))
+
 (provide 'init)
 
 ;;; init.el ends here
