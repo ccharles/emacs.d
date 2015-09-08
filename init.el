@@ -632,6 +632,8 @@
 
 (use-package csv-mode :ensure t)
 
+(use-package rotate :ensure t)
+
 (provide 'init)
 
 ;;; init.el ends here
