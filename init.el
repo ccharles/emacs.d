@@ -306,6 +306,11 @@
   (eval-after-load 'tern
     '(add-to-list 'company-backends 'company-tern)))
 
+(eval-after-load "js-mode"
+  (progn
+    (setf js-indent-level 2)
+    (add-hook 'js-mode-hook #'subword-mode)))
+
 ;;; Less
 (use-package less-css-mode
   :ensure less-css-mode)
