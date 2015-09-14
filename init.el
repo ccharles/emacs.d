@@ -645,6 +645,15 @@
   :ensure t
   :config (global-git-gutter-mode))
 
+(use-package ob-http
+  :ensure t
+  :config
+  (progn (eval-after-load "org"
+           '(require 'ob-http nil t))
+         (org-babel-do-load-languages
+          'org-babel-load-languages
+          '((http . t)))))
+
 (provide 'init)
 
 ;;; init.el ends here
