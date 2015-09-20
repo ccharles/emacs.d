@@ -540,10 +540,17 @@
   :ensure vagrant)
 
 ;;; Web mode
+(defun my-disable-electric-pair ()
+  "Disable electric pairing."
+  (electric-pair-local-mode -1))
+
 (use-package web-mode
   :ensure web-mode
-  :init (add-to-list 'auto-mode-alist
-                     '("\\.html.django\\'" . web-mode))
+  :init
+  (progn
+    (add-to-list 'auto-mode-alist
+                 '("\\.html.django\\'" . web-mode))
+    (add-hook 'web-mode-hook #'my-disable-electric-pair))
   :config
   (progn
     (setf web-mode-markup-indent-offset 2)
