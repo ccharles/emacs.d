@@ -414,7 +414,15 @@
     (plist-put org-format-latex-options :background 'default)
     (setf org-hide-emphasis-markers t)
     (setf org-ctrl-k-protect-subtree 'error)
-    (setf org-catch-invisible-edits 'show-and-error)))
+    (setf org-catch-invisible-edits 'show-and-error)
+
+    (org-babel-do-load-languages
+     'org-babel-load-languages
+     '((plantuml . t)
+       (python . t)
+       (R . t)))
+
+    (setf org-plantuml-jar-path "~/local/plantuml.jar")))
 
 ;; Page breaks
 (use-package page-break-lines
