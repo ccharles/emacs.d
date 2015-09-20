@@ -676,6 +676,15 @@
           'org-babel-load-languages
           '((http . t)))))
 
+(use-package deft
+  :ensure t
+  :init (progn
+          (setf deft-extensions '("org" "md" "txt"))
+          (setf deft-directory "~/Dropbox/Deft")
+          (setf deft-recursive t)
+          (setf deft-use-filename-as-title t))
+  :bind ("<f8>" . deft))
+
 (provide 'init)
 
 ;;; init.el ends here
