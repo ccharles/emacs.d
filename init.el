@@ -689,6 +689,13 @@
   :ensure t
   :config (exec-path-from-shell-initialize))
 
+(use-package beacon
+  :ensure t
+  :pin gnu
+  :init
+  (progn (beacon-mode 1)
+         (setf beacon-color 0.25)))
+
 (provide 'init)
 
 ;;; init.el ends here
