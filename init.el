@@ -121,6 +121,8 @@
 
 (add-to-list 'package-archives
              '("melpa" . "http://melpa.org/packages/") t)
+(add-to-list 'package-archives
+             '("org" . "http://orgmode.org/elpa/") t)
 
 (setf package-archive-priorities
       '(("melpa" . 20)
@@ -397,6 +399,8 @@
 
 (use-package org
   :bind ("C-c a" . org-agenda)
+  :ensure t
+  :pin org
   :config
   (progn
     ;; I guess this isn't autoloaded anymore?
