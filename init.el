@@ -169,10 +169,6 @@
   :ensure clojure-mode
   :config (add-hook 'clojure-mode-hook 'cider-mode))
 
-(use-package flycheck-clojure
-  :ensure t
-  :config (eval-after-load 'flycheck '(flycheck-clojure-setup)))
-
 (use-package clj-refactor
   :ensure t)
 
