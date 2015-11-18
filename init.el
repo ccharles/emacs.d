@@ -657,13 +657,6 @@
 
 (use-package rotate :ensure t)
 
-(use-package indent-guide
-  :ensure t
-  :config
-  (progn
-    (indent-guide-global-mode)
-    (set-face-foreground 'indent-guide-face "lightgray")))
-
 (use-package git-gutter-fringe
   :ensure t
   :config (global-git-gutter-mode))
@@ -689,6 +682,10 @@
 (use-package exec-path-from-shell
   :ensure t
   :config (exec-path-from-shell-initialize))
+
+(use-package hl-indent
+  :ensure t
+  :config (add-hook 'python-mode-hook #'hl-indent-mode))
 
 (provide 'init)
 
