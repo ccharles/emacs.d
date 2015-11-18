@@ -197,6 +197,7 @@
 ;;; Company
 (use-package company
   :ensure company
+  :diminish company-mode
   :config
   (progn
     (add-hook 'after-init-hook 'global-company-mode)
@@ -205,6 +206,7 @@
 ;;; Drag stuff
 (use-package drag-stuff
   :ensure drag-stuff
+  :diminish drag-stuff-mode
   :init
   (progn
     (drag-stuff-global-mode)
@@ -222,6 +224,7 @@
 
 (use-package elisp-slime-nav
   :ensure elisp-slime-nav
+  :diminish elisp-slime-nav-mode
   :config (add-hook 'emacs-lisp-mode-hook 'elisp-slime-nav-mode))
 
 (add-hook 'emacs-lisp-mode-hook #'turn-on-eldoc-mode)
@@ -275,6 +278,7 @@
 
 (use-package helm-config
   :ensure helm
+  :diminish helm-mode
   :config
   (progn
     (global-set-key (kbd "C-c h") 'helm-command-prefix)
@@ -429,6 +433,7 @@
 ;; Page breaks
 (use-package page-break-lines
   :ensure page-break-lines
+  :diminish page-break-lines-mode
   :init (global-page-break-lines-mode))
 
 ;;; Paredit
@@ -437,6 +442,7 @@
 ;;; MELPA-stable. paredit will have to do!
 (use-package paredit
   :ensure paredit
+  :diminish paredit-mode
   :config
   (progn
     (add-hook 'emacs-lisp-mode-hook #'enable-paredit-mode)
@@ -564,11 +570,13 @@
 ;;; Whitespace butler
 (use-package ws-butler
   :ensure ws-butler
+  :diminish ws-butler-mode
   :config (ws-butler-global-mode))
 
 ;;; Wrap region
 (use-package wrap-region
   :ensure wrap-region
+  :diminish wrap-region-mode
   :init (wrap-region-global-mode))
 
 ;;; YAML
@@ -578,6 +586,7 @@
 ;;; Yasnippet
 (use-package yasnippet
   :ensure yasnippet
+  :diminish yas-minor-mode
   :config
   (progn
     (setq-default yas-prompt-functions
@@ -663,6 +672,7 @@
 
 (use-package git-gutter-fringe
   :ensure t
+  :diminish git-gutter-mode
   :config (global-git-gutter-mode))
 
 (use-package ob-http
@@ -690,6 +700,9 @@
 (use-package hl-indent
   :ensure t
   :config (add-hook 'python-mode-hook #'hl-indent-mode))
+
+(use-package diminish
+  :ensure t)
 
 (provide 'init)
 
