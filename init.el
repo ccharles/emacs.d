@@ -493,14 +493,17 @@
 (use-package jedi
   :ensure jedi
   :config
-  (progn
-    (add-hook 'python-mode-hook 'jedi:setup)
-    (setf jedi:install-imenu t)))
+  (add-hook 'python-mode-hook #'jedi:setup)
+  (setf jedi:install-imenu t))
+
+(use-package company-jedi
+  :ensure t)
 
 (add-hook 'python-mode #'subword-mode)
 
 (use-package pyvenv
-  :ensure pyvenv)
+  :ensure pyvenv
+  :config (add-hook 'python-mode-hook #'pyvenv-mode))
 
 ;;; R
 (use-package ess
