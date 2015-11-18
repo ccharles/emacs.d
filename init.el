@@ -408,7 +408,8 @@
     (setq-default org-agenda-clockreport-parameter-plist
           '(:link t :maxlevel 5 :compact t))
     (setq-default org-time-clocksum-format
-          '(:hours "%d" :require-hours t :minutes ":%02d" :require-minutes t))
+                  '(:hours "%d" :require-hours t :minutes ":%02d" :require-minutes t))
+    (setq-default org-clock-mode-line-total 'today)
     (plist-put org-format-latex-options :scale 1.2)
     (plist-put org-format-latex-options :foreground 'default)
     (plist-put org-format-latex-options :background 'default)
