@@ -697,9 +697,13 @@
   :ensure t
   :config (exec-path-from-shell-initialize))
 
-(use-package hl-indent
+(use-package highlight-indent-guides
   :ensure t
-  :config (add-hook 'python-mode-hook #'hl-indent-mode))
+  :config
+  (add-hook 'prog-mode-hook #'highlight-indent-guides-mode)
+  ;; Good colours for Tomorrow Day
+  (set-face-background 'highlight-indent-guides-odd-face "white")
+  (set-face-background 'highlight-indent-guides-even-face "white smoke"))
 
 (use-package diminish
   :ensure t)
