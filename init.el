@@ -714,6 +714,10 @@
 (use-package diminish
   :ensure t)
 
+(use-package aggressive-indent
+  :ensure t
+  :config (add-hook 'prog-mode-hook #'aggressive-indent-mode))
+
 (provide 'init)
 
 ;;; init.el ends here
