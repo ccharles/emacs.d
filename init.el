@@ -718,6 +718,10 @@
   :ensure t
   :config (add-hook 'prog-mode-hook #'aggressive-indent-mode))
 
+(use-package which-key
+  :ensure t
+  :config (which-key-mode))
+
 (provide 'init)
 
 ;;; init.el ends here
