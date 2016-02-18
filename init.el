@@ -722,6 +722,12 @@
   :ensure t
   :config (which-key-mode))
 
+(use-package ag :ensure t)
+
+(use-package helm-ag
+  :ensure t
+  :bind ("C-c h g" . helm-ag))
+
 (provide 'init)
 
 ;;; init.el ends here
