@@ -493,7 +493,7 @@
   :ensure helm-projectile
   :init (helm-projectile-on)
   :config (setf projectile-switch-project-action 'projectile-vc)
-  :bind ("C-c p h" . helm-projectile))
+  :bind ("C-c h p" . helm-projectile))
 
 ;;; Puppet
 (use-package puppet-mode
